@@ -1,0 +1,2113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #172554,
+            #020617 75%
+        );
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* TEXT */
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.instruction {
+    font-size: 17px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+       GIFT BOX
+========================= */
+
+.gift {
+
+    position: relative;
+
+    width: 190px;
+    height: 210px;
+
+    cursor: pointer;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+/* BOX */
+
+.box {
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 0;
+
+    width: 160px;
+    height: 145px;
+
+    background: linear-gradient(
+        90deg,
+        #1d4ed8,
+        #2563eb 50%,
+        #1d4ed8
+    );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.45),
+        inset 8px 0 12px rgba(255,255,255,0.08);
+}
+
+
+/* LID */
+
+.lid {
+
+    position: absolute;
+
+    left: 5px;
+    top: 55px;
+
+    width: 180px;
+    height: 48px;
+
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #60a5fa,
+        #3b82f6
+    );
+
+    border-radius: 5px;
+
+    z-index: 4;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.25);
+}
+
+
+/* RED RIBBON ON LID */
+
+.lid-ribbon {
+
+    position: absolute;
+
+    left: 77px;
+    top: 0;
+
+    width: 27px;
+    height: 48px;
+
+    background: #dc2626;
+}
+
+
+/* VERTICAL RED RIBBON */
+
+.vertical-ribbon {
+
+    position: absolute;
+
+    left: 67px;
+    bottom: 0;
+
+    width: 27px;
+    height: 145px;
+
+    background: #dc2626;
+
+    z-index: 3;
+}
+
+
+/* =========================
+          BOW
+========================= */
+
+.bow {
+
+    position: absolute;
+
+    top: 20px;
+
+    width: 65px;
+    height: 42px;
+
+    background: #dc2626;
+
+    z-index: 8;
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+/* LEFT BOW */
+
+.bow-left {
+
+    left: 38px;
+
+    border-radius:
+        65% 15% 65% 15%;
+
+    transform: rotate(-25deg);
+}
+
+
+/* RIGHT BOW */
+
+.bow-right {
+
+    right: 38px;
+
+    border-radius:
+        15% 65% 15% 65%;
+
+    transform: rotate(25deg);
+}
+
+
+/* BOW CENTER */
+
+.bow-center {
+
+    position: absolute;
+
+    top: 27px;
+    left: 80px;
+
+    width: 32px;
+    height: 32px;
+
+    background: #b91c1c;
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.4);
+}
+
+
+/* BOW TAIL LEFT */
+
+.gift::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 48px;
+    left: 72px;
+
+    width: 45px;
+    height: 65px;
+
+    background: #dc2626;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            75% 100%,
+            50% 75%,
+            25% 100%
+        );
+
+    transform: rotate(-15deg);
+
+    z-index: 7;
+}
+
+
+/* BOW TAIL RIGHT */
+
+.gift::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 48px;
+    right: 72px;
+
+    width: 45px;
+    height: 65px;
+
+    background: #dc2626;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            75% 100%,
+            50% 75%,
+            25% 100%
+        );
+
+    transform: rotate(15deg);
+
+    z-index: 7;
+}
+
+
+/* =========================
+       BOTTOM TEXT
+========================= */
+
+.click-text {
+
+    margin-top: 30px;
+
+    font-size: 17px;
+
+    animation: blink 1.5s infinite;
+}
+
+
+/* =========================
+        GIFT FLOAT
+========================= */
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* TEXT BLINK */
+
+@keyframes blink {
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+/* =========================
+        SPARKLES
+========================= */
+
+.sparkle {
+
+    position: absolute;
+
+    font-size: 24px;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    animation:
+        sparkleMove 1.3s ease-out forwards;
+}
+
+
+@keyframes sparkleMove {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(0, 0)
+            scale(0)
+            rotate(0deg);
+    }
+
+    20% {
+
+        opacity: 1;
+
+        transform:
+            translate(0, -10px)
+            scale(1.3)
+            rotate(45deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(0.5)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================
+          MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .instruction {
+        font-size: 15px;
+    }
+
+    .gift {
+        transform: scale(0.85);
+    }
+
+}
+
+/* =========================
+        PAGE 2
+========================= */
+
+.page2 {
+    animation: pageAppear 1.2s ease;
+}
+
+.birthday-heart {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+.page2 h1 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.page2 h2 {
+    font-size: 27px;
+
+    margin-bottom: 25px;
+}
+
+.birthday-message {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* BUTTON */
+
+.page2 button {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.4);
+
+    transition: 0.3s;
+}
+
+.page2 button:hover {
+    transform: scale(1.08);
+
+    background: #3b82f6;
+}
+
+
+/* HEART ANIMATION */
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* PAGE APPEAR */
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .page2 h1 {
+        font-size: 32px;
+    }
+
+    .page2 h2 {
+        font-size: 22px;
+    }
+
+    .birthday-message {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================
+        PAGE 3
+========================= */
+
+.page3 h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.cake-instruction {
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+
+/* CAKE AREA */
+
+.cake-area {
+    position: relative;
+
+    width: 280px;
+    height: 230px;
+
+    cursor: pointer;
+
+    margin: 10px auto;
+}
+
+
+/* CAKE */
+
+.cake {
+    position: absolute;
+
+    bottom: 20px;
+    left: 40px;
+
+    width: 200px;
+    height: 120px;
+
+    transition: 0.6s;
+}
+
+
+/* CAKE BODY */
+
+.cake-body {
+    width: 200px;
+    height: 90px;
+
+    background: linear-gradient(
+        180deg,
+        #60a5fa,
+        #2563eb
+    );
+
+    border-radius: 15px 15px 25px 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.4);
+}
+
+
+/* CREAM */
+
+.cream-top {
+    position: absolute;
+
+    top: -8px;
+    left: 0;
+
+    width: 200px;
+    height: 30px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+/* CANDLES */
+
+.candles {
+    position: absolute;
+
+    top: 10px;
+    left: 65px;
+
+    width: 150px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    z-index: 5;
+}
+
+.candle {
+    width: 15px;
+    height: 55px;
+
+    background: #fbbf24;
+
+    border-radius: 5px;
+
+    box-shadow:
+        inset 3px 0 5px rgba(255,255,255,0.4);
+}
+
+
+/* FLAMES */
+
+.flame {
+    position: relative;
+
+    top: -32px;
+    left: -5px;
+
+    font-size: 25px;
+
+    transition: 0.4s;
+}
+
+
+/* CAKE CLICK TEXT */
+
+.cake-click {
+    font-size: 16px;
+
+    margin-top: 5px;
+
+    animation: blink 1.5s infinite;
+}
+
+
+/* CAKE CUT */
+
+.cake-cut {
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+}
+
+
+/* LETTER */
+
+.cake-letter {
+
+    width: min(90%, 500px);
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    pointer-events: none;
+
+    transition: 0.8s;
+}
+
+.cake-letter.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.cake-letter h2 {
+    margin-bottom: 12px;
+
+    font-size: 22px;
+}
+
+.cake-letter p {
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    margin-bottom: 18px;
+}
+
+
+/* BUTTON */
+
+.cake-letter button {
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cake-letter button:hover {
+    transform: scale(1.08);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .page3 h1 {
+        font-size: 26px;
+    }
+
+    .cake-area {
+        transform: scale(0.85);
+
+        margin-top: -10px;
+    }
+
+    .cake-letter {
+        margin-top: -15px;
+    }
+
+}
+
+/* =========================
+      3 LAYER CAKE
+========================= */
+
+.page3 h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cake-instruction {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+
+/* CAKE AREA */
+
+.cake-area {
+    position: relative;
+
+    width: 330px;
+    height: 310px;
+
+    margin: 0 auto 10px;
+
+    transition: 0.7s;
+}
+
+
+/* =========================
+        CAKE LAYERS
+========================= */
+
+.cake-layer {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 12px 12px 18px 18px;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,0.35);
+}
+
+
+/* BOTTOM */
+
+.bottom-layer {
+    bottom: 15px;
+
+    width: 270px;
+    height: 75px;
+
+    background: linear-gradient(
+        180deg,
+        #60a5fa,
+        #2563eb
+    );
+
+    z-index: 1;
+}
+
+
+/* MIDDLE */
+
+.middle-layer {
+    bottom: 78px;
+
+    width: 230px;
+    height: 65px;
+
+    background: linear-gradient(
+        180deg,
+        #93c5fd,
+        #3b82f6
+    );
+
+    z-index: 2;
+}
+
+
+/* TOP */
+
+.top-layer {
+    bottom: 133px;
+
+    width: 190px;
+    height: 60px;
+
+    background: linear-gradient(
+        180deg,
+        #bfdbfe,
+        #60a5fa
+    );
+
+    z-index: 3;
+}
+
+
+/* CREAM ON EACH LAYER */
+
+.cream {
+    position: absolute;
+
+    top: -8px;
+    left: 0;
+
+    width: 100%;
+    height: 18px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,0.15);
+}
+
+
+
+
+/* =========================
+       CANDLES - FIXED
+========================= */
+
+.candles {
+    position: absolute;
+
+    /* Put candles directly on top layer */
+    top: 82px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 115px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    z-index: 10;
+}
+
+
+/* INDIVIDUAL CANDLE */
+
+.candle {
+    position: relative;
+
+    width: 16px;
+    height: 52px;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #fbbf24 0px,
+        #fbbf24 6px,
+        #f59e0b 6px,
+        #f59e0b 10px
+    );
+
+    border-radius: 4px;
+
+    box-shadow:
+        2px 3px 5px rgba(0,0,0,0.3);
+}
+
+
+/* SMALL WICK */
+
+.candle::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+    left: 6px;
+
+    width: 3px;
+    height: 7px;
+
+    background: #222;
+
+    border-radius: 2px;
+}
+
+
+/* FLAME */
+
+.flame {
+    position: absolute;
+
+    top: -34px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    transition:
+        opacity 0.5s,
+        transform 0.5s;
+}
+
+
+/* BLOWN FLAME */
+
+.flame.blown {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(-15px)
+        scale(0);
+}
+
+
+/* =========================
+       REAL CANDLE FLAME
+========================= */
+
+.flame {
+    position: absolute;
+
+    width: 16px;
+    height: 24px;
+
+    left: 50%;
+    top: -27px;
+
+    transform: translateX(-50%) rotate(45deg);
+
+    background: #ffb300;
+
+    border-radius: 50% 50% 50% 0;
+
+    box-shadow:
+        0 0 8px #ff9800,
+        0 0 15px #ffb300;
+
+    animation: flameMove 0.5s ease-in-out infinite alternate;
+
+    transition:
+        opacity 0.4s,
+        transform 0.4s;
+}
+
+
+/* INNER PART OF FLAME */
+
+.flame::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 12px;
+
+    left: 4px;
+    top: 8px;
+
+    background: #fff3c4;
+
+    border-radius: 50% 50% 50% 0;
+}
+
+
+/* FLAME MOVEMENT */
+
+@keyframes flameMove {
+
+    from {
+        transform:
+            translateX(-50%)
+            rotate(40deg)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(50deg)
+            scale(1.08);
+    }
+}
+
+
+/* AFTER BLOWING */
+
+.flame.blown {
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(-20px)
+        rotate(45deg)
+        scale(0);
+}
+
+
+/* BLOWN */
+
+.flame.blown {
+
+    opacity: 0;
+
+    transform:
+        translateY(-20px)
+        scale(0);
+}
+
+
+/* =========================
+       BLOW BUTTON
+========================= */
+
+.blow-button,
+.cut-button {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(37,99,235,0.4);
+
+    transition: 0.3s;
+}
+
+
+.blow-button:hover,
+.cut-button:hover {
+
+    transform: scale(1.07);
+
+    background: #3b82f6;
+}
+
+
+/* CUT BUTTON HIDDEN */
+
+.cut-button {
+
+    display: none;
+}
+
+
+/* =========================
+        CAKE CUT
+========================= */
+
+.cake-cut {
+
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+}
+
+
+/* =========================
+          LETTER
+========================= */
+
+.cake-letter {
+
+    width: min(90%, 500px);
+
+    margin-top: 18px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    pointer-events: none;
+
+    transition: 0.8s;
+}
+
+
+.cake-letter.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+.cake-letter h2 {
+    margin-bottom: 12px;
+}
+
+
+.cake-letter p {
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+.cake-letter button {
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .page3 h1 {
+        font-size: 26px;
+    }
+
+    .cake-area {
+        transform: scale(0.82);
+
+        margin-top: -20px;
+
+        margin-bottom: -35px;
+    }
+
+}
+
+/* =========================
+        PAGE 4
+========================= */
+
+.page4 h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.page4 > p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+
+/* BALLOON AREA */
+
+.balloon-area {
+    position: relative;
+
+    width: 350px;
+    height: 300px;
+
+    margin: 0 auto;
+}
+
+
+/* BALLOONS */
+
+.balloon {
+    position: absolute;
+
+    font-size: 75px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    user-select: none;
+
+    animation: balloonFloat 2s ease-in-out infinite;
+}
+
+
+/* POSITIONS */
+
+.balloon1 {
+    left: 20px;
+    top: 50px;
+}
+
+.balloon2 {
+    left: 105px;
+    top: 5px;
+
+    animation-delay: 0.3s;
+}
+
+.balloon3 {
+    right: 105px;
+    top: 5px;
+
+    animation-delay: 0.6s;
+}
+
+.balloon4 {
+    right: 20px;
+    top: 50px;
+
+    animation-delay: 0.9s;
+}
+
+
+/* HOVER */
+
+.balloon:hover {
+    transform: scale(1.15);
+}
+
+
+/* POP */
+
+.balloon.popped {
+
+    animation: balloonPop 0.5s forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+/* FLOAT */
+
+@keyframes balloonFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+       PAGE 4 BALLOONS
+========================= */
+
+.balloon-area {
+
+    width: 360px;
+    height: 300px;
+
+    margin: 20px auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 25px;
+
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* BALLOON */
+
+.balloon {
+
+    position: relative;
+
+    width: 115px;
+    height: 135px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+
+/* BALLOON BODY */
+
+.balloon-shape {
+
+    position: relative;
+
+    display: block;
+
+    width: 85px;
+    height: 105px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    box-shadow:
+        inset -12px -8px 15px rgba(0,0,0,0.15),
+        inset 10px 8px 15px rgba(255,255,255,0.25),
+        0 8px 15px rgba(0,0,0,0.25);
+
+    transition: 0.3s;
+}
+
+
+/* BALLOON HIGHLIGHT */
+
+.balloon-shape::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 30px;
+
+    top: 18px;
+    left: 18px;
+
+    background: rgba(255,255,255,0.35);
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+}
+
+
+/* BALLOON KNOT */
+
+.balloon-shape::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 12px;
+    height: 12px;
+
+    background: inherit;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+}
+
+
+/* STRINGS */
+
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 45px;
+
+    bottom: -30px;
+
+    background: rgba(255,255,255,0.7);
+}
+
+
+/* =========================
+       COLORS
+========================= */
+
+.balloon1 .balloon-shape {
+    background: linear-gradient(
+        135deg,
+        #ff6b9d,
+        #e11d48
+    );
+}
+
+.balloon2 .balloon-shape {
+    background: linear-gradient(
+        135deg,
+        #60a5fa,
+        #2563eb
+    );
+}
+
+.balloon3 .balloon-shape {
+    background: linear-gradient(
+        135deg,
+        #c084fc,
+        #7e22ce
+    );
+}
+
+.balloon4 .balloon-shape {
+    background: linear-gradient(
+        135deg,
+        #facc15,
+        #f59e0b
+    );
+}
+
+
+/* HOVER */
+
+.balloon:hover {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+          POP
+========================= */
+
+.balloon.popped {
+
+    animation: balloonPop 0.5s forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(1.25);
+        opacity: 0.9;
+    }
+
+    70% {
+        transform: scale(0.7);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+          MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .balloon-area {
+
+        width: 320px;
+        height: 290px;
+
+        gap: 15px;
+    }
+
+    .balloon {
+
+        transform: scale(0.9);
+    }
+
+}
+
+/* Bigger and lower Next Memory button */
+
+#nextMemory {
+    margin-top: 35px;
+
+    padding: 16px 38px;
+
+    font-size: 19px;
+
+    border-radius: 35px;
+
+    min-width: 210px;
+
+    box-shadow:
+        0 8px 22px rgba(37, 99, 235, 0.45);
+
+    transition: 0.3s;
+}
+
+#nextMemory:hover {
+    transform: scale(1.08);
+}
+
+/* PAGE 5 - LIVE WRITING EFFECT */
+
+.page5 {
+    animation: pageAppear 1s ease;
+}
+
+.writing-area {
+    width: min(90%, 700px);
+    min-height: 430px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 25px;
+
+    background: rgba(255,255,255,.04);
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        inset 0 0 30px rgba(255,255,255,.02);
+
+    backdrop-filter: blur(10px);
+}
+
+.memory-icon {
+    font-size: 55px;
+    margin-bottom: 25px;
+
+    animation: moonFloat 3s ease-in-out infinite;
+}
+
+.writing-area h1 {
+    width: 100%;
+
+    font-family: "Segoe Print",
+                 "Comic Sans MS",
+                 cursive;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    line-height: 2;
+
+    color: white;
+
+    text-align: left;
+
+    white-space: pre-wrap;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.15);
+}
+
+
+/* blinking writing cursor */
+
+.cursor {
+    width: 3px;
+    height: 25px;
+
+    background: #60a5fa;
+
+    align-self: flex-start;
+
+    margin-left: 2px;
+
+    animation: cursorBlink .7s infinite;
+}
+
+
+/* Next button */
+
+#nextMemory {
+    display: none;
+
+    margin-top: 30px;
+
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 30px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,.4);
+}
+
+#nextMemory.show {
+    display: inline-block;
+
+    animation: buttonAppear .8s ease;
+}
+
+
+@keyframes cursorBlink {
+
+    0%, 45% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes moonFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .writing-area {
+        min-height: 430px;
+        padding: 30px 20px;
+    }
+
+    .writing-area h1 {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    .memory-icon {
+        font-size: 45px;
+    }
+
+}
+
+/* PAGE 6 */
+
+.page6 {
+    animation: pageAppear 1s ease;
+}
+
+.talk-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: heartFloat 2.5s ease-in-out infinite;
+}
+
+.page6-writing {
+    min-height: 390px;
+}
+
+.page6-writing h1 {
+    font-family: "Segoe Print",
+                 "Comic Sans MS",
+                 cursive;
+
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 2;
+
+    color: white;
+    text-align: left;
+
+    white-space: pre-wrap;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.15);
+}
+
+.page6 .cursor {
+    align-self: flex-start;
+}
+
+#finalButton {
+    display: none;
+
+    margin-top: 30px;
+
+    border: none;
+    padding: 16px 35px;
+
+    border-radius: 30px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(37,99,235,.45);
+
+    transition: .3s;
+}
+
+#finalButton.show {
+    display: inline-block;
+    animation: buttonAppear .8s ease;
+}
+
+#finalButton:hover {
+    transform: scale(1.08);
+    background: #3b82f6;
+}
+
+@keyframes heartFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .talk-icon {
+        font-size: 48px;
+    }
+
+    .page6-writing {
+        min-height: 400px;
+    }
+
+    .page6-writing h1 {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+}
+
+/* =========================
+   FINAL BIRTHDAY PAGE
+========================= */
+
+.final-page {
+    animation: finalAppear 1.5s ease;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.final-stars {
+    font-size: 28px;
+    margin-bottom: 15px;
+    animation: starsGlow 2s infinite;
+}
+
+.final-page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.birthday-cake {
+    font-size: 85px;
+    margin: 10px 0 20px;
+
+    animation: cakeBounce 2s ease-in-out infinite;
+}
+
+.final-card {
+    width: min(90%, 650px);
+
+    padding: 35px 30px;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+    animation: cardAppear 1.5s ease;
+}
+
+.final-card h2 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.final-card p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+
+    color: rgba(255,255,255,.9);
+}
+
+.final-line {
+    width: 80px;
+    height: 2px;
+
+    background: rgba(255,255,255,.5);
+
+    margin: 25px auto;
+}
+
+.final-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.final-card .happy {
+    font-size: 30px;
+    margin-bottom: 0;
+
+    animation: happyGlow 1.8s ease-in-out infinite;
+}
+
+
+/* Animations */
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes cakeBounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes starsGlow {
+
+    0%,100% {
+        opacity: .7;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+
+}
+
+@keyframes happyGlow {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+}
+
+
+/* Celebration */
+
+.confetti {
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px) {
+
+    .final-page h1 {
+        font-size: 25px;
+    }
+
+    .birthday-cake {
+        font-size: 70px;
+    }
+
+    .final-card {
+        padding: 28px 20px;
+    }
+
+    .final-card h2 {
+        font-size: 21px;
+    }
+
+    .final-card p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .final-card .happy {
+        font-size: 25px;
+    }
+
+}

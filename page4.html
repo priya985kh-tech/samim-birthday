@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Balloons 🎈</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container page4">
+
+        <!-- TITLE -->
+
+        <div class="small-text">
+            ✨ A Little Birthday Fun ✨
+        </div>
+
+        <h1>
+            Pop the Balloons! 🎈
+        </h1>
+
+        <p id="balloonInstruction">
+            Click each balloon to reveal a message 💙
+        </p>
+
+
+        <!-- =========================
+             2 × 2 BALLOON BOX
+        ========================== -->
+
+        <div class="balloon-area">
+
+
+            <!-- BALLOON 1 -->
+
+            <div class="balloon balloon1"
+                 onclick="popBalloon(this, 0)">
+
+                <span class="balloon-shape"></span>
+
+            </div>
+
+
+            <!-- BALLOON 2 -->
+
+            <div class="balloon balloon2"
+                 onclick="popBalloon(this, 1)">
+
+                <span class="balloon-shape"></span>
+
+            </div>
+
+
+            <!-- BALLOON 3 -->
+
+            <div class="balloon balloon3"
+                 onclick="popBalloon(this, 2)">
+
+                <span class="balloon-shape"></span>
+
+            </div>
+
+
+            <!-- BALLOON 4 -->
+
+            <div class="balloon balloon4"
+                 onclick="popBalloon(this, 3)">
+
+                <span class="balloon-shape"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MESSAGE BOX
+        ========================== -->
+
+        <div class="balloon-message"
+             id="balloonMessage">
+
+            Click a balloon! 🎈
+
+        </div>
+
+
+        <!-- =========================
+             NEXT BUTTON
+        ========================== -->
+
+        <button id="nextMemory"
+                onclick="goToPage5()">
+
+            💙 Next Memory →
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let popped = 0;
+
+
+        const messages = [
+
+            "Keep smiling always! 😊",
+
+            "Stay the same amazing person you are! 💙",
+
+            "May all your dreams come true! ✨",
+
+            "May you always have reasons to be happy! 🤍"
+
+        ];
+
+
+        function popBalloon(balloon, number) {
+
+
+            // Prevent clicking again
+
+            if (balloon.classList.contains("popped")) {
+
+                return;
+
+            }
+
+
+            // Pop the balloon
+
+            balloon.classList.add("popped");
+
+
+            // Show message
+
+            document.getElementById("balloonMessage").innerHTML =
+                messages[number];
+
+
+            popped++;
+
+
+            // All balloons popped
+
+            if (popped === 4) {
+
+                document.getElementById("balloonInstruction").innerHTML =
+                    "🎉 You popped them all! 🎉";
+
+
+                document.getElementById("balloonMessage").innerHTML =
+    "🎉 You made it through all the balloons! 🎈✨";
+
+                document.getElementById("nextMemory")
+                    .classList.add("show");
+
+            }
+
+        }
+
+
+        // GO TO PAGE 5
+
+        function goToPage5() {
+
+            window.location.href = "page5.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

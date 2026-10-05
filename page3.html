@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Make a Wish 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container page3">
+
+        <div class="small-text">
+            ✨ Make a Wish ✨
+        </div>
+
+        <h1>It's Cake Time, Samim! 🎂</h1>
+
+        <p class="cake-instruction" id="instruction">
+            First, blow out the candles! 🕯️✨
+        </p>
+
+
+        <!-- 3 LAYER CAKE -->
+
+        <div class="cake-area">
+
+            <!-- Candles -->
+
+            <div class="candles">
+
+                <div class="candle">
+                    <div class="flame">🔥</div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame">🔥</div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame">🔥</div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame">🔥</div>
+                </div>
+
+            </div>
+
+
+            <!-- TOP LAYER -->
+
+            <div class="cake-layer top-layer">
+                <div class="cream"></div>
+            </div>
+
+
+            <!-- MIDDLE LAYER -->
+
+            <div class="cake-layer middle-layer">
+                <div class="cream"></div>
+            </div>
+
+
+            <!-- BOTTOM LAYER -->
+
+            <div class="cake-layer bottom-layer">
+                <div class="cream"></div>
+            </div>
+
+        </div>
+
+
+        <!-- BLOW BUTTON -->
+
+        <button class="blow-button" id="blowButton" onclick="blowCandles()">
+            🕯️ Blow the Candles
+        </button>
+
+
+        <!-- CUT BUTTON -->
+
+        <button class="cut-button" id="cutButton" onclick="cutCake()">
+            🔪 Cut the Cake
+        </button>
+
+
+        <!-- LETTER -->
+
+        <div class="cake-letter" id="cakeLetter">
+
+            <h2>💙 A Little Birthday Note 💙</h2>
+
+            <p>
+                May this birthday bring you lots of happiness,
+                beautiful memories and countless reasons to smile. ✨
+            </p>
+
+            <button onclick="goToPage4()">
+                🎈 Next Surprise →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let candlesBlown = false;
+        let cakeCut = false;
+
+
+        // BLOW CANDLES
+
+        function blowCandles() {
+
+            if (candlesBlown) {
+                return;
+            }
+
+            const flames =
+                document.querySelectorAll(".flame");
+
+            flames.forEach(function(flame) {
+
+                flame.classList.add("blown");
+
+            });
+
+
+            candlesBlown = true;
+
+
+            document.getElementById("instruction").innerHTML =
+                "Perfect! 🎉 Now cut the cake! 🔪";
+
+
+            document.getElementById("blowButton").style.display =
+                "none";
+
+            document.getElementById("cutButton").style.display =
+                "inline-block";
+        }
+
+
+        // CUT CAKE
+
+        function cutCake() {
+
+            if (!candlesBlown || cakeCut) {
+                return;
+            }
+
+            cakeCut = true;
+
+
+            document.querySelector(".cake-area")
+                .classList.add("cake-cut");
+
+
+            document.getElementById("instruction").innerHTML =
+                "🎉 Cake Cut! Happy Birthday Samim! 🎂💙";
+
+
+            document.getElementById("cutButton").style.display =
+                "none";
+
+
+            setTimeout(function() {
+
+                document
+                    .getElementById("cakeLetter")
+                    .classList.add("show");
+
+            }, 800);
+        }
+
+
+        function goToPage4() {
+
+            window.location.href = "page4.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Memory ✨</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container page5">
+
+    <div class="small-text">✨ A Little Memory ✨</div>
+
+    <div class="writing-area">
+
+        <div class="memory-icon">🌙</div>
+
+        <h1 id="typingText"></h1>
+
+        <div class="cursor"></div>
+
+    </div>
+
+    <button id="nextMemory" onclick="goToPage6()">
+        🤍 One More Thing →
+    </button>
+
+</div>
+
+
+<script>
+
+const text = `There is one little memory I still remember...
+
+Whenever you used to go for Namaz, you would see me while passing by... 🥹
+
+And even after you had gone a little far... you would turn around and look at me again. ❤️
+
+Maybe it was just a small moment for you... but somehow, it became a sweet memory for me. ✨`;
+
+
+let index = 0;
+
+const typingText = document.getElementById("typingText");
+const cursor = document.querySelector(".cursor");
+const nextButton = document.getElementById("nextMemory");
+
+
+function typeWriter() {
+
+    if (index < text.length) {
+
+        typingText.innerHTML += text.charAt(index);
+
+        index++;
+
+        let speed = 45;
+
+        if (text.charAt(index - 1) === ".") {
+            speed = 300;
+        }
+
+        if (text.charAt(index - 1) === "\n") {
+            speed = 500;
+        }
+
+        setTimeout(typeWriter, speed);
+
+    } else {
+
+        cursor.style.display = "none";
+
+        setTimeout(function() {
+            nextButton.classList.add("show");
+        }, 800);
+
+    }
+
+}
+
+
+setTimeout(typeWriter, 1000);
+
+
+function goToPage6() {
+    window.location.href = "page6.html";
+}
+
+</script>
+
+</body>
+</html>

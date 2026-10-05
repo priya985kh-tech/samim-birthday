@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Thing I Like About You 💙</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container page6">
+
+    <div class="small-text">✨ One Little Thing ✨</div>
+
+    <div class="talk-icon">💙</div>
+
+    <div class="writing-area page6-writing">
+
+        <h1 id="typingText"></h1>
+
+        <div class="cursor"></div>
+
+    </div>
+
+    <button id="finalButton" onclick="goToFinal()">
+        ✨ Final Surprise →
+    </button>
+
+</div>
+
+
+<script>
+
+const text = `You know what I really like about you?
+
+I like the way you talk. 🫶
+
+Your way of talking has something that makes even ordinary conversations feel special.
+
+I could listen to you talk for hours. 🤍`;
+
+
+let index = 0;
+
+const typingText = document.getElementById("typingText");
+const cursor = document.querySelector(".cursor");
+const finalButton = document.getElementById("finalButton");
+
+
+function typeWriter() {
+
+    if (index < text.length) {
+
+        typingText.innerHTML += text.charAt(index);
+
+        index++;
+
+        let speed = 50;
+
+        if (text.charAt(index - 1) === ".") {
+            speed = 300;
+        }
+
+        if (text.charAt(index - 1) === "?") {
+            speed = 400;
+        }
+
+        if (text.charAt(index - 1) === "\n") {
+            speed = 600;
+        }
+
+        setTimeout(typeWriter, speed);
+
+    } else {
+
+        cursor.style.display = "none";
+
+        setTimeout(function() {
+            finalButton.classList.add("show");
+        }, 900);
+
+    }
+}
+
+
+setTimeout(typeWriter, 1000);
+
+
+function goToFinal() {
+    window.location.href = "final.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Samim 🎂❤️</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container final-page">
+
+    <div class="final-stars">✨ ⭐ ✨</div>
+
+    <div class="small-text">
+        💙 One Last Surprise 💙
+    </div>
+
+    <h1>
+        One last surprise for you, Samim…
+    </h1>
+
+    <div class="birthday-cake">🎂</div>
+
+    <div class="final-card">
+
+        <h2>
+            Many Many Happy Returns of the Day, Samim! 🎂❤️
+        </h2>
+
+        <p>
+            May your year be filled with happiness, peace,
+            success and countless beautiful moments. ✨
+        </p>
+
+        <p>
+            I wish you good luck for your future and hope
+            you achieve everything you dream of. 🤍
+        </p>
+
+        <p>
+            Stay happy. Stay blessed. Keep smiling. 😊
+        </p>
+
+        <div class="final-line"></div>
+
+        <h3>
+            And once again…
+        </h3>
+
+        <h2 class="happy">
+            Happy Birthday! 🎉🎂❤️
+        </h2>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* Little celebration when final page opens */
+
+setTimeout(function() {
+
+    for(let i = 0; i < 25; i++) {
+
+        const confetti = document.createElement("span");
+
+        confetti.className = "confetti";
+
+        confetti.innerHTML =
+            ["✨","⭐","💙","🤍","🎉"][Math.floor(Math.random()*5)];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(confetti);
+
+    }
+
+}, 500);
+
+</script>
+
+</body>
+</html>
